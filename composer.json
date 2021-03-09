@@ -6,9 +6,18 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
-        "goalgorilla/open_social": "~10.0.0",
+        "goalgorilla/open_social": "~9.0.",
         "php": "^7.2",
         "monolog/monolog": "^1.17"
+    },
+    "scripts": {
+      "this-is-a-comment": "The Plugin::scaffold post-*-cmd can be removed when upgrading to Open Social 10.0",
+      "post-install-cmd": [
+        "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+      ],
+      "post-update-cmd": [
+        "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+      ]
     },
     "repositories": [
         {
@@ -23,7 +32,7 @@
     "extra": {
         "drupal-scaffold": {
             "locations": {
-                "web-root": "html/"
+                "web-root": "plani.fun/"
             }
         },
         "installer-types": [
@@ -31,22 +40,22 @@
             "npm-asset"
         ],
         "installer-paths": {
-            "html/core": [
+            "plani.fun/core": [
                 "drupal/core"
             ],
-            "html/modules/contrib/{$name}": [
+            "plani.fun/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "html/profiles/contrib/social": [
+            "plani.fun/profiles/contrib/social": [
                 "goalgorilla/open_social"
             ],
-            "html/profiles/contrib/{$name}": [
+            "plani.fun/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
-            "html/themes/contrib/{$name}": [
+            "plani.fun/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
-            "html/libraries/{$name}": [
+            "plani.fun/libraries/{$name}": [
                 "type:drupal-library",
                 "type:bower-asset",
                 "type:npm-asset"
